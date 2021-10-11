@@ -10,19 +10,19 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/public
+    device/voltage/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/private
+    device/voltage/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/system
+    device/voltage/sepolicy/common/dynamic \
+    device/voltage/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/vendor
+    device/voltage/sepolicy/common/dynamic \
+    device/voltage/sepolicy/common/vendor
 endif
 
 ifneq ($(filter eng,$(TARGET_BUILD_VARIANT)),)
@@ -32,5 +32,5 @@ endif
 
 # Include atv rules on atv product
 ifeq ($(PRODUCT_IS_ATV), true)
-include device/lineage/sepolicy/atv/sepolicy.mk
+include device/voltage/sepolicy/atv/sepolicy.mk
 endif
