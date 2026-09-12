@@ -25,6 +25,7 @@ allow system_server system_exported_cleartext_prop:property_service set;
 set_prop(system_server, xtra_control_prop)
 
 allow system_server pocket_service:service_manager { add find };
+add_service(system_server, quickspace_service);
 allow system_server pocket_judge_sysfs:dir search;
 allow system_server pocket_judge_sysfs:file rw_file_perms;
 
